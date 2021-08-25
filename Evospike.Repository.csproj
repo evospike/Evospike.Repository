@@ -12,8 +12,9 @@
     <Title>Evospike.Repository</Title>
     <Description>This repository contains the code to build services with common codes in the shortest possible time</Description>
     <PackageId>Evospike.Repository</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageProjectUrl>https://github.com/evospike/Evospike.Repository</PackageProjectUrl>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

@@ -14,11 +14,12 @@ namespace Evospike.Repository.Extensions
 {
     public static class ServiceExtension
     {
-        public static void AddSqlRepository<T>(this IServiceCollection services, DbContext dbContext) where T : Entity, new()
+        public static void AddSqlRepository<TModel, TDbContext>(this IServiceCollection services) where TModel : Entity, new() where TDbContext : DbContext
         {
-            services.AddSingleton<IRepository<T>>(serviceProvider =>
+            var dbContext = services.BuildServiceProvider().GetRequiredService<TDbContext>();
+            services.AddSingleton<IRepository<TModel>>(serviceProvider =>
             {
-                return new SqlRepository<T>(dbContext);
+                return new SqlRepository<TModel>(dbContext);
             });
         }
 
