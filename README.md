@@ -34,7 +34,7 @@ services.AddMongo()
 Or
 
 ```csharp
-services.AddSqlRepository<Item>("{{YourDbContext}}");
+services.AddSqlRepository<Item, {{YourDbContext}}>();
 ```
 
 Your model must inherit from Entity class
